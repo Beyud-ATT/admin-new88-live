@@ -51,9 +51,15 @@ export default function Login() {
           </Form.Item>
 
           <Form.Item label={null}>
-            <Button type="primary" htmlType="submit">
-              Đăng Nhập
-            </Button>
+            <Flex justify="end">
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="!bg-[var(--color-brand-primary)]"
+              >
+                Đăng Nhập
+              </Button>
+            </Flex>
           </Form.Item>
         </Form>
       </div>
