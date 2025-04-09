@@ -44,8 +44,10 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     if (!isAuthenticated) {
       navigate("/login");
+    } else {
+      navigate("/livestreams");
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated]);
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login }}>
