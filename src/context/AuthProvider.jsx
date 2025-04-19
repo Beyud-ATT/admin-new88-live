@@ -17,18 +17,21 @@ export function AuthProvider({ children }) {
     localStorage.getItem("token") !== null,
   );
 
-  const handleAuthUser = useCallback(async (res) => {
-    if (res.status === 200) {
-      const { token, refreshToken, userId, displayName, userType } = res.data;
-      localStorage.setItem("token", token);
-      localStorage.setItem("refreshToken", refreshToken);
-      localStorage.setItem("userId", userId);
-      localStorage.setItem("displayName", displayName);
-      localStorage.setItem("userType", userType);
-      setIsAuthenticated(true);
-      navigate("/livestreams");
-    }
-  }, []);
+  const handleAuthUser = useCallback(
+    async (res) => {
+      if (res.status === 200) {
+        const { token, refreshToken, userId, displayName, userType } = res.data;
+        localStorage.setItem("token", token);
+        localStorage.setItem("refreshToken", refreshToken);
+        localStorage.setItem("userId", userId);
+        localStorage.setItem("displayName", displayName);
+        localStorage.setItem("userType", userType);
+        setIsAuthenticated(true);
+        navigate("/livestreams");
+      }
+    },
+    [navigate],
+  );
 
   const login = useCallback(
     async (data) => {
@@ -55,7 +58,7 @@ export function AuthProvider({ children }) {
     if (!isAuthenticated) {
       navigate("/login");
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, navigate]);
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
