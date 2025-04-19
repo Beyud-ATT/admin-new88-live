@@ -1,6 +1,6 @@
 import { Menu } from "antd";
 import { IoNewspaper } from "react-icons/io5";
-import { RiLiveFill } from "react-icons/ri";
+import { RiCharacterRecognitionLine, RiLiveFill } from "react-icons/ri";
 import Logo from "../components/Logo";
 import { FaUser } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router";
@@ -27,6 +27,11 @@ const items = [
     key: "idols",
     icon: <PiUserSoundBold />,
     label: "Idols",
+  },
+  {
+    key: "block-words",
+    icon: <RiCharacterRecognitionLine />,
+    label: "Từ ngữ chặn",
   },
 ];
 

@@ -13,6 +13,18 @@ export default function ThemeProvider({ children }) {
             itemHeight: 50,
             groupTitleFontSize: 20,
             itemMarginBlock: 15,
+            darkItemBg: "var(--background-shader-2)",
+            darkItemActiveBg: "var(--active-menu-dark-background)",
+          },
+          Layout: {
+            siderBg: "var(--background-shader-2)",
+            headerBg: "var(--background-shader-2)",
+            bodyBg: "var(--background-shader-1)",
+          },
+          Table: {
+            borderColor: "white",
+            headerColor: "white",
+            headerBg: "var(--color-brand-primary)",
           },
           Form: {
             labelColor: "white",

@@ -14,12 +14,16 @@ axoisBase.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 axoisBase.interceptors.response.use(
   (response) => {
-    return { status: response.status, data: response?.data?.data };
+    return {
+      status: response.status,
+      data: response?.data?.data,
+      pagination: response?.data?.pagination,
+    };
   },
   (error) => {
     if (error.response.status === 401) {
@@ -32,7 +36,7 @@ axoisBase.interceptors.response.use(
       }
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default axoisBase;

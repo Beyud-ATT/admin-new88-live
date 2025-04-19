@@ -45,6 +45,7 @@ export default function IdolTable() {
         dataIndex: "action",
         key: "aciton",
         align: "center",
+        width: 300,
         render: (_, record) => {
           return (
             <Flex gap={10} justify="center">
@@ -58,6 +59,11 @@ export default function IdolTable() {
   }, []);
 
   return (
-    <Table columns={columns} dataSource={users?.data} loading={isLoading} />
+    <Table
+      columns={columns}
+      dataSource={users?.data}
+      loading={isLoading}
+      scroll={{ y: 500 }}
+    />
   );
 }

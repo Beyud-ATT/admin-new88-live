@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import UpdateModal from "./UpdateModal";
 import DeleteModal from "./DeleteModal";
 import useNewsGet from "../../../hooks/useNewsGet";
+import Pagination from "../../../components/Pagination";
 
 export default function NewsTable() {
   const { data: news, isLoading } = useNewsGet();
@@ -30,10 +31,11 @@ export default function NewsTable() {
       {
         title: "Hành động",
         dataIndex: "action",
+        align: "center",
         key: "aciton",
         render: (_, record) => {
           return (
-            <Flex gap={5}>
+            <Flex gap={5} justify="center">
               <UpdateModal record={record} />
               <DeleteModal record={record} />
             </Flex>
@@ -44,6 +46,15 @@ export default function NewsTable() {
   }, []);
 
   return (
-    <Table columns={columns} dataSource={news?.data} loading={isLoading} />
+    <>
+      <Table
+        columns={columns}
+        dataSource={news?.data}
+        loading={isLoading}
+        pagination={false}
+        scroll={{ y: 500 }}
+      />
+      <Pagination pagination={news?.pagination} />
+    </>
   );
 }

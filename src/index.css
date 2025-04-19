@@ -44,6 +44,7 @@
 :root {
   --background-color: #060b16;
   --lighter-background: #1f242f;
+  --lighter-background-2: #1a1a1a;
   --border-radius: 10px;
   --text-color: #667085;
   --text-color-login-signup: #85888e;
@@ -77,5 +78,52 @@
       #44331c 0%,
       #101010 100%
     );
+  }
+
+  .user-action-dropdown ul {
+    background-color: var(--color-brand-primary);
+  }
+
+  .ant-pagination-item-link {
+    color: var(--color-brand-primary) !important;
+  }
+
+  .ant-pagination .ant-pagination-item {
+    border: none;
+  }
+
+  .ant-pagination-item-active > a {
+    border: 1px solid var(--color-brand-primary) !important;
+    color: var(--color-brand-primary) !important;
+    border-radius: 6px;
+    background-color: var(--lighter-background-2);
+  }
+
+  .ant-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover,
+  .ant-pagination
+    .ant-pagination-item:not(.ant-pagination-item-active):hover
+    > a {
+    background-color: var(--lighter-background-2);
+    color: var(--color-brand-primary);
+    border-radius: 6px;
+  }
+
+  .ant-pagination
+    .ant-pagination-jump-prev
+    .ant-pagination-item-container
+    .ant-pagination-item-ellipsis,
+  .ant-pagination
+    .ant-pagination-jump-next
+    .ant-pagination-item-container
+    .ant-pagination-item-ellipsis,
+  .ant-pagination
+    .ant-pagination-jump-prev
+    .ant-pagination-item-container
+    .ant-pagination-item-link-icon,
+  .ant-pagination
+    .ant-pagination-jump-next
+    .ant-pagination-item-container
+    .ant-pagination-item-link-icon {
+    color: var(--color-brand-primary);
   }
 }

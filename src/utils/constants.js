@@ -12,4 +12,9 @@ const USER_TYPE = {
   USER: { value: 2, label: "Người dùng" },
 };
 
-export { LOCK_REASON, USER_TYPE };
+const WORD_TYPE = {
+  BAD_WORD: { value: 1, label: "Từ ngữ bậy bạ" },
+  SITE_NAME: { value: 2, label: "Tên trang khác" },
+};
+
+export { LOCK_REASON, USER_TYPE, WORD_TYPE };

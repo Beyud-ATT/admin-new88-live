@@ -8,6 +8,7 @@ import News from "./pages/news/Index";
 import Users from "./pages/users/Index";
 import Idol from "./pages/idols/Index";
 import { Flex } from "antd";
+import BlockWords from "./pages/block-words/Index";
 
 function App() {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/users" element={<Users />} />
           <Route path="/idols" element={<Idol />} />
+          <Route path="/block-words" element={<BlockWords />} />
         </Route>
         <Route path="login" element={<Login />} />
         <Route

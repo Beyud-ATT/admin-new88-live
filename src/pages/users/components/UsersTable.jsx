@@ -8,6 +8,7 @@ import moment from "moment";
 import LockUserModal from "./LockUserModal";
 import BanChatModal from "./BanChatModal";
 import UpdateUserTypeModal from "./UpdateUserTypeModal";
+import Pagination from "../../../components/Pagination";
 
 export default function UsersTable() {
   const { data: users, isLoading } = useUsersGet();
@@ -74,6 +75,7 @@ export default function UsersTable() {
         dataIndex: "action",
         key: "aciton",
         align: "center",
+        width: 450,
         render: (_, record) => {
           return (
             <Flex gap={10} justify="center">
@@ -88,6 +90,15 @@ export default function UsersTable() {
   }, []);
 
   return (
-    <Table columns={columns} dataSource={users?.data} loading={isLoading} />
+    <>
+      <Table
+        columns={columns}
+        dataSource={users?.data}
+        loading={isLoading}
+        pagination={false}
+        scroll={{ y: 500 }}
+      />
+      <Pagination pagination={users?.pagination} />
+    </>
   );
 }

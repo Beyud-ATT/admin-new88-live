@@ -5,6 +5,7 @@ import UpdateOrderModal from "./UpdateOrderModal";
 import UpdateOnTopModal from "./UpdateOnTopModal";
 import UpdateDefaultModal from "./UpdateDefault";
 import moment from "moment";
+import Pagination from "../../../components/Pagination";
 
 export default function LivestreamsTable() {
   const { data: livestreams, isLoading } = useLivestreamsGet();
@@ -96,6 +97,7 @@ export default function LivestreamsTable() {
       {
         title: "Hành động",
         dataIndex: "action",
+        width: 350,
         key: "aciton",
         align: "center",
         render: (_, record) => {
@@ -112,10 +114,15 @@ export default function LivestreamsTable() {
   }, []);
 
   return (
-    <Table
-      columns={columns}
-      dataSource={livestreams?.data}
-      loading={isLoading}
-    />
+    <>
+      <Table
+        columns={columns}
+        dataSource={livestreams?.data}
+        loading={isLoading}
+        scroll={{ y: 500 }}
+        pagination={false}
+      />
+      <Pagination pagination={livestreams?.pagination} />
+    </>
   );
 }

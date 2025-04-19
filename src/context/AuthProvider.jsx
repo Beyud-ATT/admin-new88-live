@@ -26,6 +26,7 @@ export function AuthProvider({ children }) {
       localStorage.setItem("displayName", displayName);
       localStorage.setItem("userType", userType);
       setIsAuthenticated(true);
+      navigate("/livestreams");
     }
   }, []);
 
@@ -41,16 +42,23 @@ export function AuthProvider({ children }) {
     [handleAuthUser],
   );
 
+  const logout = useCallback(() => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("displayName");
+    localStorage.removeItem("userType");
+    setIsAuthenticated(false);
+  }, []);
+
   useEffect(() => {
     if (!isAuthenticated) {
       navigate("/login");
-    } else {
-      navigate("/livestreams");
     }
   }, [isAuthenticated]);
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

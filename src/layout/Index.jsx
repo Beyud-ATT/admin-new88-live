@@ -6,10 +6,13 @@ import Content from "./Content";
 
 const MainLayout = () => (
   <Layout className="h-screen overflow-hidden">
-    <Sider Layout={Layout} />
+    <Sider Layout={Layout} className="!bg-[var(--lighter-background)]" />
     <Layout>
-      <Header Layout={Layout} />
-      <Content Layout={Layout} />
+      <Header Layout={Layout} className="!bg-[var(--lighter-background-2)]" />
+      <Content
+        Layout={Layout}
+        className="mx-auto flex w-[90%] flex-col justify-center"
+      />
     </Layout>
   </Layout>
 );
