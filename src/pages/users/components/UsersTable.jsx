@@ -9,6 +9,7 @@ import LockUserModal from "./LockUserModal";
 import BanChatModal from "./BanChatModal";
 import UpdateUserTypeModal from "./UpdateUserTypeModal";
 import Pagination from "../../../components/Pagination";
+import TextSearch from "../../../components/TextSearch";
 
 export default function UsersTable() {
   const { data: users, isLoading } = useUsersGet();
@@ -91,6 +92,7 @@ export default function UsersTable() {
 
   return (
     <>
+      <TextSearch />
       <Table
         columns={columns}
         dataSource={users?.data}
