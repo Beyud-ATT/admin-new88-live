@@ -5,6 +5,7 @@ import useUsersGet from "../../../hooks/useUsersGet";
 import moment from "moment";
 import UpdatePasswordModal from "../../users/components/UpdatePasswordModal";
 import Pagination from "../../../components/Pagination";
+import TextSearch from "../../../components/TextSearch";
 
 export default function IdolTable() {
   const { data: users, isLoading } = useUsersGet();
@@ -60,6 +61,7 @@ export default function IdolTable() {
 
   return (
     <>
+      <TextSearch />
       <Table
         columns={columns}
         dataSource={users?.data}
