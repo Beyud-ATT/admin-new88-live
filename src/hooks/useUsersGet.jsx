@@ -1,11 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import { getUsers } from "../services/usersAPI";
-import { useLocation } from "react-router";
+import { useLocation, useSearchParams } from "react-router";
 import { useEffect, useState } from "react";
 
 export default function useUsersGet() {
   const pathname = useLocation().pathname;
   const [userType, setUserType] = useState(null);
+  const [searchParams] = useSearchParams();
+
+  const page = searchParams.get("page") || 1;
+  const pageSize = searchParams.get("pageSize") || 20;
 
   useEffect(() => {
     if (pathname.includes("/users")) {
@@ -18,8 +22,8 @@ export default function useUsersGet() {
   }, [pathname]);
 
   return useQuery({
-    queryKey: ["users", userType],
-    queryFn: () => getUsers({ userType }),
+    queryKey: ["users", userType, page, pageSize],
+    queryFn: () => getUsers({ userType, pageIndex: page, pageSize }),
     enabled: userType !== null,
   });
 }

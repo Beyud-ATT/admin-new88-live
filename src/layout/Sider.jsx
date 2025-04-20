@@ -5,7 +5,7 @@ import Logo from "../components/Logo";
 import { FaUser } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router";
 import { useState } from "react";
-import { PiUserSoundBold } from "react-icons/pi";
+import { PiLinkSimpleBold, PiUserSoundBold } from "react-icons/pi";
 
 const items = [
   {
@@ -32,6 +32,11 @@ const items = [
     key: "block-words",
     icon: <RiCharacterRecognitionLine />,
     label: "Từ ngữ chặn",
+  },
+  {
+    key: "general-links",
+    icon: <PiLinkSimpleBold />,
+    label: "Links",
   },
 ];
 

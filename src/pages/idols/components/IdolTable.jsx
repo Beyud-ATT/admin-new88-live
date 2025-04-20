@@ -3,8 +3,8 @@ import { useMemo } from "react";
 import DeleteModal from "../../users/components/DeleteModal";
 import useUsersGet from "../../../hooks/useUsersGet";
 import moment from "moment";
-import LockUserModal from "../../users/components/LockUserModal";
 import UpdatePasswordModal from "../../users/components/UpdatePasswordModal";
+import Pagination from "../../../components/Pagination";
 
 export default function IdolTable() {
   const { data: users, isLoading } = useUsersGet();
@@ -59,11 +59,15 @@ export default function IdolTable() {
   }, []);
 
   return (
-    <Table
-      columns={columns}
-      dataSource={users?.data}
-      loading={isLoading}
-      scroll={{ y: 500 }}
-    />
+    <>
+      <Table
+        columns={columns}
+        dataSource={users?.data}
+        loading={isLoading}
+        pagination={false}
+        scroll={{ y: 700 }}
+      />
+      <Pagination pagination={users?.pagination} />
+    </>
   );
 }

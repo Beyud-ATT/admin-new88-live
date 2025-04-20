@@ -119,7 +119,7 @@ export default function LivestreamsTable() {
         columns={columns}
         dataSource={livestreams?.data}
         loading={isLoading}
-        scroll={{ y: 500 }}
+        scroll={{ y: 700 }}
         pagination={false}
       />
       <Pagination pagination={livestreams?.pagination} />
