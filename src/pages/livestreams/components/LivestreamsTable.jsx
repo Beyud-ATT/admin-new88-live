@@ -6,6 +6,7 @@ import UpdateOnTopModal from "./UpdateOnTopModal";
 import UpdateDefaultModal from "./UpdateDefault";
 import moment from "moment";
 import Pagination from "../../../components/Pagination";
+import TextSearch from "../../../components/TextSearch";
 
 export default function LivestreamsTable() {
   const { data: livestreams, isLoading } = useLivestreamsGet();
@@ -115,6 +116,7 @@ export default function LivestreamsTable() {
 
   return (
     <>
+      <TextSearch />
       <Table
         columns={columns}
         dataSource={livestreams?.data}

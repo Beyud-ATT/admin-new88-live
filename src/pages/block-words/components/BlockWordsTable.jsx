@@ -4,6 +4,7 @@ import DeleteModal from "./DeleteModal";
 import useBlockWordGet from "../../../hooks/useBlockWordGet";
 import { WORD_TYPE } from "../../../utils/constants";
 import Pagination from "../../../components/Pagination";
+import TextSearch from "../../../components/TextSearch";
 
 export default function BlockWordsTable() {
   const { blockWords, isLoading } = useBlockWordGet();
@@ -49,6 +50,7 @@ export default function BlockWordsTable() {
 
   return (
     <>
+      <TextSearch />
       <Table
         columns={columns}
         dataSource={blockWords?.data}

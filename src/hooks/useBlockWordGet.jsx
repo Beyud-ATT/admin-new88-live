@@ -7,10 +7,11 @@ export default function useBlockWordGet() {
 
   const page = searchParams.get("page") || 1;
   const pageSize = searchParams.get("pageSize") || 20;
+  const textSearch = searchParams.get("textSearch");
 
   const { data, isLoading, error, isError } = useQuery({
-    queryKey: ["block-words", page, pageSize],
-    queryFn: () => getBlockWords({ pageIndex: page, pageSize }),
+    queryKey: ["block-words", page, pageSize, textSearch],
+    queryFn: () => getBlockWords({ pageIndex: page, pageSize, textSearch }),
   });
 
   if (isError) {

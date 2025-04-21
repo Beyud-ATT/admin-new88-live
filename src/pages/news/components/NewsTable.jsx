@@ -4,6 +4,7 @@ import UpdateModal from "./UpdateModal";
 import DeleteModal from "./DeleteModal";
 import useNewsGet from "../../../hooks/useNewsGet";
 import Pagination from "../../../components/Pagination";
+import TextSearch from "../../../components/TextSearch";
 
 export default function NewsTable() {
   const { data: news, isLoading } = useNewsGet();
@@ -47,6 +48,7 @@ export default function NewsTable() {
 
   return (
     <>
+      <TextSearch />
       <Table
         columns={columns}
         dataSource={news?.data}
