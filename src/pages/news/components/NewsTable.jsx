@@ -54,7 +54,7 @@ export default function NewsTable() {
         dataSource={news?.data}
         loading={isLoading}
         pagination={false}
-        scroll={{ y: 700 }}
+        scroll={{ y: 600 }}
       />
       <Pagination pagination={news?.pagination} />
     </>

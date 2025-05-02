@@ -6,6 +6,7 @@ import { FaUser } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router";
 import { useState } from "react";
 import { PiLinkSimpleBold, PiUserSoundBold } from "react-icons/pi";
+import { GiPresent } from "react-icons/gi";
 
 const items = [
   {
@@ -37,6 +38,11 @@ const items = [
     key: "general-links",
     icon: <PiLinkSimpleBold />,
     label: "Links",
+  },
+  {
+    key: "present-comment",
+    icon: <GiPresent />,
+    label: "Đánh giá quà tặng",
   },
 ];
 
