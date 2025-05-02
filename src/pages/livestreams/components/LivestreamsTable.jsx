@@ -56,7 +56,7 @@ export default function LivestreamsTable() {
               <div
                 className={`${data ? "animate-blink bg-green-500" : "bg-gray-500"} w-fit rounded-lg px-2 py-1 font-semibold text-white uppercase`}
               >
-                {data ? "default" : "none"}
+                {data ? "mặc định" : "không"}
               </div>
             </Flex>
           );

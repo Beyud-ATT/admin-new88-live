@@ -56,7 +56,7 @@ function UpdateUserTypeForm({ record }) {
           type="submit"
           className="cursor-pointer rounded-lg bg-[var(--color-brand-primary)] px-3 py-1 text-white"
         >
-          Khóa tài khoản
+          Cập nhật
         </button>
       </Form.Item>
     </Form>

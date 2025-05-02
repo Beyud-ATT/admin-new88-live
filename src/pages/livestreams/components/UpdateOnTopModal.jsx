@@ -17,7 +17,7 @@ function UpdateOnTopForm({ record }) {
       {
         onSuccess: () => {
           closeModal();
-          toast.success("Đã ghim!");
+          toast.success("Cập nhật thành công!");
         },
       },
     );

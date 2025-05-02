@@ -21,13 +21,14 @@ export default function NewsTable() {
         dataIndex: "image",
         key: "image",
         render: (image) => {
-          return <Image src={image} alt="image" width={300} height={150} />;
+          return <Image src={image} alt="image" />;
         },
       },
       {
-        title: "Thứ Tự",
+        title: "Độ ưu tiên",
         dataIndex: "order",
         key: "order",
+        align: "center",
       },
       {
         title: "Hành động",
